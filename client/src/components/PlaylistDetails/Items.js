@@ -5,8 +5,8 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getMoviesBySearch, getPlaylist, getPlaylistsByCreator} from '../../actions/posts';
 
-import Post from '../Posts/Post/Post';
-import useStyles from '../Posts/styles';
+import Post from './Post/Post';
+import useStyles from './styles';
 
 const Items = (props) => {
 
@@ -61,7 +61,7 @@ console.log(id);
       <Grid className={classes.container} container alignItems="stretch" spacing={3}>
         {playlist.items.length>0 ? playlist.items?.map((movie) => (
           <Grid key={movie.imdbID} item xs={12} sm={12} md={6} lg={3}>
-            <Post post={movie} />
+            <Post post={movie} pid={playlist._id}/>
           </Grid>
         )) : <Typography variant="h6">
         {'No Movies'}

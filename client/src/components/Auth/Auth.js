@@ -34,8 +34,10 @@ const SignUp = () => {
 
     if (isSignup) {
       dispatch(signup(form, history));
+      // history.push('/posts');
     } else {
       dispatch(signin(form, history));
+      // history.push('/posts');
     }
   };
 
@@ -48,7 +50,7 @@ const SignUp = () => {
 
       history.push('/posts');
     } catch (error) {
-      console.log(error);
+      console.log(error); 
     }
   };
 

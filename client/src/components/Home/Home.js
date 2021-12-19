@@ -28,7 +28,7 @@ const Home = (props) => {
   
   useEffect(() => {
     dispatch(getPlaylistsByCreator(`${userId.toString()}User`));
-  });
+  },[]);
   
   // const playlist = () => {
   //   if (search.trim()) {

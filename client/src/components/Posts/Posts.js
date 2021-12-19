@@ -13,7 +13,7 @@ const classes = useStyles();
     
 console.log(props.movies);
 
-if (!props.movies.length && !props.isLoading) return 'No movies';
+if (props.movies && props.movies.length<1 && !props.isLoading) return 'No movies';
 
   return (
     props.isLoading ? <CircularProgress /> : (

@@ -23,7 +23,7 @@ console.log(id);
 
   useEffect(() => {
     if (movie) {
-      dispatch(getMoviesBySearch('none'));
+      dispatch(getMoviesBySearch(movie.Title.split(" ")[0] || 'none'));
     }
   }, [movie]);
 
@@ -44,7 +44,7 @@ console.log(id);
   // 9990978107
 
 
-  const recommendedmovies = movies.filter(({ imdbID }) => imdbID !== movie.imdbID);
+  const recommendedmovies = movies ? movies.filter(({ imdbID }) => imdbID !== movie.imdbID) : '';
 
   return (
     <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>

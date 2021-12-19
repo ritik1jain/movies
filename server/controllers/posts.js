@@ -71,13 +71,12 @@ export const addToPlaylist = async (req, res) => {
 
 export const removeFromPlaylist = async (req, res) => {
     const { id } = req.params;
-    const { value } = req.body;
-
+    const { imdbID } = req.body;
     let playlist = await PlaylistMessage.findById(id);
 
-    playlist = playlist.items.filter((val) => val.imdbID !== value);
-
-    const updatedPlaylist = await PlaylistMessage.findByIdAndUpdate(id, playlist, { new: true });
+    let itm = playlist.items.filter((val) => val.imdbID !== imdbID);
+    let list = {...playlist, items: itm};
+    const updatedPlaylist = await PlaylistMessage.findByIdAndUpdate(id, list, { new: true });
 
     res.json(updatedPlaylist);
 };

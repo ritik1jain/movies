@@ -78,7 +78,7 @@ export const addToPlaylist = (value, id) => async (dispatch) => {
 export const removeFromPlaylist = (value, id) => async (dispatch) => {
   try {
     const { data } = await api.removeFromPlaylist(id, value);
-
+    console.log(data);
     dispatch({ type: REMOVEFROMPLAYLIST, payload: data });
 
     return data.items;
