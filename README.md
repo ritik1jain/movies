@@ -10,12 +10,12 @@ Setup:
 - run ```npm install && npm start``` for both client and server side to start the app
 
 Operations:-
-Signin/Signup
-Display Playlists of User
-Movie search
-MoviDetails
-Create Playlist
-DeletePlaylist
+Signin/Signup,
+Display Playlists of User,
+Movie search,
+MoviDetails,
+Create Playlist,
+DeletePlaylist,
 Add Movie to Playlist
 
 TODO: Adding Private functionality to playlists.
